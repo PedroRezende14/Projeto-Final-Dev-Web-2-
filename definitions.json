@@ -1,0 +1,66 @@
+{
+  "rabbit_version": "3.8",
+  "users": [
+    {
+      "name": "admin",
+      "password": "123456",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "fila_exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true
+    },
+    {
+      "name": "banco_exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true
+    }
+  ],
+  "queues": [
+    {
+      "name": "Fila1",
+      "vhost": "/",
+      "durable": true
+    },
+    {
+      "name": "banco_fila",
+      "vhost": "/",
+      "durable": true
+    }
+  ],
+  "bindings": [
+    {
+      "source": "fila_exchange",
+      "vhost": "/",
+      "destination": "Fila1",
+      "destination_type": "queue",
+      "routing_key": ""
+    },
+    {
+      "source": "banco_exchange",
+      "vhost": "/",
+      "destination": "banco_fila",
+      "destination_type": "queue",
+      "routing_key": "banco_routing_key"
+    }
+  ]
+}

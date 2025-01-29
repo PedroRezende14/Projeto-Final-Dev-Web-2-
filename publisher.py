@@ -8,7 +8,7 @@ class RabbitmqPublisher:
         self.__port = 5672
         self.__username = "admin"
         self.__password = "123456"
-        self.__exchange = "fila_exchange"
+        self.__exchange = "teste"
         self.__routing_key = ""
         self.__channel = self.__create_channel()
 
