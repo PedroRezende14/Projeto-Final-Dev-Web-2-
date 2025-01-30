@@ -51,8 +51,8 @@ class RabbitmqPublisherBanco:
         self.__port = 5672
         self.__username = "admin"
         self.__password = "123456"
-        self.__exchange = "testebanco"
-        self.__routing_key = "banco_routing_key"  
+        self.__exchange = "envio_banco"
+        self.__routing_key = ""  
         self.__channel = self.__create_channel()
 
     def __create_channel(self):
