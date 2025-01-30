@@ -2,7 +2,6 @@ import pika  # type: ignore
 import json
 import mysql.connector # type: ignore
 
-
 DB_CONFIG = {
     "host": "localhost",
     "user": "app_user",
